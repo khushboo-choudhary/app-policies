@@ -4,239 +4,391 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — Dhamaka Wheel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --accent: #6B3FA0;
-    --accent-dark: #4A2C70;
-    --text: #222222;
-    --muted: #5a5a5a;
-    --bg: #ffffff;
-    --card: #f7f5fb;
-    --border: #e4e0ec;
+    --obsidian: #0B0E14;
+    --obsidian-2: #141926;
+    --gold: #D4AF37;
+    --cyan: #00A7B5;
+    --rose: #C81E6B;
+    --paper: #FFFFFF;
+    --paper-tint: #FAF9F6;
+    --ink: #1B1F27;
+    --muted: #5B6472;
+    --rule: #E7E2D6;
   }
+
   * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  }
+
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.65;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
   }
-  .wrap {
-    max-width: 760px;
+
+  a { color: var(--cyan); }
+  a:focus-visible, button:focus-visible, .toc a:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    background: radial-gradient(120% 160% at 15% -10%, #1a2033 0%, var(--obsidian) 55%), var(--obsidian);
+    color: #fff;
+    padding: 64px 24px 56px;
+    overflow: hidden;
+  }
+  .hero-inner {
+    max-width: 980px;
     margin: 0 auto;
-    padding: 48px 24px 96px;
+    position: relative;
+    z-index: 2;
   }
-  header {
-    border-bottom: 3px solid var(--accent);
-    padding-bottom: 20px;
-    margin-bottom: 32px;
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
   }
-  header h1 {
-    font-size: 28px;
-    margin: 0 0 6px;
-    color: var(--accent-dark);
+  .eyebrow::before {
+    content: "";
+    width: 20px; height: 2px;
+    background: var(--gold);
+    display: inline-block;
   }
-  header .meta {
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: clamp(34px, 6vw, 56px);
+    margin: 0 0 14px;
+    letter-spacing: 0.3px;
+  }
+  .hero p.sub {
+    font-size: 16px;
+    color: #C7CCDA;
+    max-width: 560px;
+    margin: 0 0 26px;
+  }
+  .pill-row { display: flex; flex-wrap: wrap; gap: 10px; }
+  .pill {
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
+    color: #E8EAF0;
+  }
+  .pill strong { color: var(--gold); font-weight: 700; }
+
+  /* Decorative wheel ring ornament */
+  .ring-ornament {
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    background: conic-gradient(var(--gold) 0 12%, transparent 12% 20%, var(--cyan) 20% 32%, transparent 32% 40%, var(--rose) 40% 52%, transparent 52% 60%, var(--gold) 60% 72%, transparent 72% 80%, var(--cyan) 80% 92%, transparent 92% 100%);
+    opacity: 0.16;
+    -webkit-mask: radial-gradient(circle, transparent 58%, #000 60%);
+            mask: radial-gradient(circle, transparent 58%, #000 60%);
+    animation: spin 90s linear infinite;
+    z-index: 1;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ---------- Layout ---------- */
+  .layout {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 24px 100px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 48px;
+  }
+  @media (max-width: 780px) {
+    .layout { grid-template-columns: 1fr; }
+  }
+
+  .toc {
+    padding-top: 44px;
+  }
+  .toc-inner { position: sticky; top: 28px; }
+  .toc-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     color: var(--muted);
-    font-size: 14px;
+    margin-bottom: 12px;
   }
-  .notice {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--accent);
-    padding: 14px 18px;
-    border-radius: 6px;
-    font-size: 14px;
-    color: var(--muted);
-    margin-bottom: 36px;
+  .toc ol { list-style: none; margin: 0; padding: 0; }
+  .toc li { margin-bottom: 9px; }
+  .toc a {
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 13.5px;
+    font-weight: 500;
+    display: flex;
+    gap: 8px;
   }
-  .notice strong { color: var(--text); }
-  h2 {
-    font-size: 19px;
-    color: var(--accent-dark);
-    margin-top: 36px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 6px;
+  .toc a:hover { color: var(--cyan); }
+  .toc .n { color: var(--gold); font-weight: 700; min-width: 16px; }
+  @media (max-width: 780px) {
+    .toc-inner { position: static; }
+    .toc { border-bottom: 1px solid var(--rule); padding-bottom: 24px; margin-bottom: 8px; }
+    .toc ol { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+  }
+
+  main { padding-top: 44px; min-width: 0; }
+
+  .glance {
+    background: var(--paper-tint);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--gold);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 44px;
+  }
+  .glance h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    margin: 0 0 12px;
+    border: none;
+    padding: 0;
+  }
+  .glance ul { margin: 0; padding-left: 18px; }
+  .glance li { font-size: 14.5px; margin-bottom: 6px; color: var(--ink); }
+
+  section.doc-section { margin-bottom: 40px; scroll-margin-top: 24px; }
+
+  .sec-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+  .wedge {
+    flex: none;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: conic-gradient(var(--gold) 0 34%, var(--cyan) 34% 67%, var(--rose) 67% 100%);
+    box-shadow: 0 0 0 3px var(--paper), 0 1px 4px rgba(0,0,0,0.18);
+    display: grid;
+    place-items: center;
+  }
+  .wedge .hub {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--paper);
+    display: grid;
+    place-items: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 12.5px;
+    color: var(--ink);
+  }
+  h2.sec-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 700;
+    margin: 0;
+    color: var(--ink);
   }
   h3 {
-    font-size: 15px;
-    margin-top: 22px;
-    margin-bottom: 6px;
-    color: var(--text);
+    font-size: 14.5px;
+    font-weight: 700;
+    margin: 18px 0 6px;
+    color: var(--ink);
   }
-  p, li { font-size: 15px; color: var(--text); }
-  ul { padding-left: 22px; }
-  li { margin-bottom: 4px; }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 16px 0;
-    font-size: 14px;
-  }
-  th, td {
-    border: 1px solid var(--border);
-    padding: 10px 12px;
-    text-align: left;
-  }
-  th { background: var(--card); color: var(--accent-dark); }
-  a { color: var(--accent); }
-  .placeholder {
-    background: #fff3cd;
-    color: #7a5b00;
-    padding: 1px 6px;
-    border-radius: 4px;
-    font-weight: 600;
-  }
-  code {
-    background: var(--card);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 13px;
-  }
+  section.doc-section p, section.doc-section li { font-size: 15px; color: var(--ink); }
+  section.doc-section ul { padding-left: 20px; }
+  section.doc-section li { margin-bottom: 5px; }
+
+  .rule { border: none; border-top: 1px solid var(--rule); margin: 40px 0; }
+
   footer {
-    margin-top: 48px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border);
-    font-size: 13px;
-    color: var(--muted);
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 36px 24px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-top: 1px solid var(--rule);
   }
+  .foot-emblem { display: flex; align-items: center; gap: 10px; }
+  .foot-emblem .mini-ring {
+    width: 26px; height: 26px; border-radius: 50%;
+    background: conic-gradient(var(--gold) 0 34%, var(--cyan) 34% 67%, var(--rose) 67% 100%);
+  }
+  .foot-emblem span { font-weight: 700; font-size: 13.5px; color: var(--ink); }
+  footer .meta { font-size: 12.5px; color: var(--muted); }
+  footer .cross-link { font-size: 13px; font-weight: 600; }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <header>
-    <h1>Privacy Policy — Dhamaka Wheel</h1>
-    <div class="meta">
-      Effective Date: <span class="placeholder">July 7, 2026</span>
+<div class="hero">
+  <div class="ring-ornament" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">Dhamaka Wheel</div>
+    <h1>Privacy Policy</h1>
+    <p class="sub">How your information is handled while you play — in plain terms, and in full.</p>
+    <div class="pill-row">
+      <span class="pill">Effective <strong>July 7, 2026</strong></span>
+      <span class="pill">No accounts required</span>
+      <span class="pill">Data stays on your device</span>
     </div>
-  </header>
-
-  <p>This Privacy Policy describes how Dhamaka Wheel ("the App", "we", "us")
-  handles information when you download and play the game. Dhamaka Wheel is
-  built to work entirely on your device, without requiring an account — this
-  policy explains exactly what that means in practice.</p>
-
-  <h2>1. Who We Are</h2>
-  <p>Dhamaka Wheel is developed by <span class="placeholder">Agalecha</span>.<br>
-  Contact: <span class="placeholder">agalecha.dev@gmail.com</span></p>
-
-  <h2>2. Information We Collect</h2>
-  <p>Dhamaka Wheel does <strong>not</strong> require you to create an account,
-  and does not ask for your name, email, phone number, or any contact information.</p>
-
-  <h3>2.1 Information Stored Only On Your Device</h3>
-  <p>The following is saved locally on your device using Android's standard
-  local storage, and is never sent to us or any server we control:</p>
-  <ul>
-    <li>Coin balance, streak count, and round/score history</li>
-    <li>Sound, music, and dark/light theme preferences</li>
-    <li>Any nickname you type in to label players on the wheel board</li>
-    <li>A locally cached copy of puzzle content, so the game works offline</li>
-  </ul>
-  <p>Because this data never leaves your device, we have no way to access,
-  view, or recover it — clearing the app's storage or uninstalling the app
-  deletes it permanently and immediately.</p>
-
-  <h3>2.2 Information Collected by Advertising</h3>
-  <p>Dhamaka Wheel shows ads through <strong>Google AdMob</strong>. To serve
-  and measure ads, Google AdMob and its partners may automatically collect:</p>
-  <ul>
-    <li>Your device's advertising ID</li>
-    <li>IP address and general network/carrier information</li>
-    <li>Device type, operating system version, and general usage/interaction
-      data with ads (e.g., which ads were shown or tapped)</li>
-  </ul>
-  <p>This data is collected and processed by Google, not by us directly. You
-  can review and control it through:</p>
-  <ul>
-    <li>Google's Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
-    <li>Google's Ads Settings: <a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a></li>
-    <li>Your device's <strong>Settings → Privacy → Ads</strong> menu (to reset
-      or limit your advertising ID, or opt out of personalized ads)</li>
-  </ul>
-
-  <h2>3. Information We Do NOT Collect</h2>
-  <p>We do not collect, store, or have access to:</p>
-  <ul>
-    <li>Your name, email address, or phone number</li>
-    <li>Your precise location</li>
-    <li>Contacts, photos, camera, or microphone data</li>
-    <li>Payment information (Dhamaka Wheel does not currently offer in-app purchases)</li>
-    <li>Any data tied to a user account, because the app has no accounts or sign-in</li>
-  </ul>
-
-  <h2>4. How Information Is Used</h2>
-  <ul>
-    <li>Locally stored data is used only to run the game itself — remembering
-      your progress, coins, and preferences between sessions.</li>
-    <li>Advertising data collected by Google AdMob is used to show and measure
-      ads, and to help prevent invalid ad traffic, per Google's own policies.</li>
-  </ul>
-
-  <h2>5. Third-Party Services</h2>
-  <p>Dhamaka Wheel uses the following third-party service:</p>
-  <table>
-    <tr><th>Service</th><th>Purpose</th><th>Privacy Policy</th></tr>
-    <tr>
-      <td>Google AdMob / Google Play Services</td>
-      <td>Displaying in-app advertisements</td>
-      <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
-    </tr>
-  </table>
-  <p>We do not currently integrate any analytics, crash-reporting, or backend
-  server SDKs. If that changes in a future update, this policy will be
-  updated to reflect it before that update is released.</p>
-
-  <h2>6. Children's Privacy</h2>
-  <p>Dhamaka Wheel is intended for a <strong>general audience</strong> and is
-  not directed at children under 13. We do not knowingly collect personal
-  information from children. If you believe a child has provided us
-  information, contact us using the details in Section 1 and we will address it.</p>
-
-  <h2>7. Data Retention &amp; Deletion</h2>
-  <p>Because all gameplay data lives only on your device:</p>
-  <ul>
-    <li>It is retained for as long as the app remains installed with its data intact.</li>
-    <li>You can delete it at any time by clearing the app's storage/cache in
-      Android Settings, or by uninstalling the app — no request to us is required.</li>
-  </ul>
-  <p>Advertising data collected by Google is retained and deleted according
-  to Google's own policies, linked in Section 2.2.</p>
-
-  <h2>8. Your Rights</h2>
-  <p>Depending on where you live (e.g., under GDPR in the European Economic
-  Area, or the CCPA/CPRA in California), you may have rights to access,
-  correct, or delete personal information, and to opt out of the sale or
-  sharing of personal information. Because we do not collect personally
-  identifying information or operate a backend server, most of these rights
-  are exercised directly on your device (Section 7) or through Google's own
-  advertising controls (Section 2.2). For anything else, contact us using
-  Section 1.</p>
-  <p><strong>We do not sell your personal information.</strong></p>
-
-  <h2>9. Security</h2>
-  <p>Your gameplay data stays on your device and is protected by your
-  device's own operating system security. We do not transmit or store it on
-  any servers we operate, so there is no server-side breach risk for that
-  data on our end.</p>
-
-  <h2>10. Changes to This Policy</h2>
-  <p>We may update this Privacy Policy as the app changes — for example, if
-  we add an account system, analytics, or in-app purchases in the future. We
-  will update the "Last Updated" date above when we do. Continued use of the
-  app after changes means you accept the updated policy.</p>
-
-  <h2>11. Contact Us</h2>
-  <p>Questions about this policy? Contact
-  <span class="placeholder">agalecha.dev@gmail.com</span>.</p>
-
-  <footer>
-    Dhamaka Wheel — Privacy Policy.
-  </footer>
-
+  </div>
 </div>
+
+<div class="layout">
+
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-inner">
+      <div class="toc-label">On this page</div>
+      <ol>
+        <li><a href="#sec-1"><span class="n">1</span> Developer Info</a></li>
+        <li><a href="#sec-2"><span class="n">2</span> Information We Collect</a></li>
+        <li><a href="#sec-3"><span class="n">3</span> Play Games</a></li>
+        <li><a href="#sec-4"><span class="n">4</span> In-App Purchases</a></li>
+        <li><a href="#sec-5"><span class="n">5</span> What We Don't Collect</a></li>
+        <li><a href="#sec-6"><span class="n">6</span> Third-Party Services</a></li>
+        <li><a href="#sec-7"><span class="n">7</span> Data Retention</a></li>
+        <li><a href="#sec-8"><span class="n">8</span> Children's Privacy</a></li>
+        <li><a href="#sec-9"><span class="n">9</span> Security</a></li>
+        <li><a href="#sec-10"><span class="n">10</span> Changes</a></li>
+        <li><a href="#sec-11"><span class="n">11</span> Contact</a></li>
+      </ol>
+    </div>
+  </nav>
+
+  <main>
+
+    <div class="glance">
+      <h2>At a glance</h2>
+      <ul>
+        <li>No sign-up, no name or email required to play.</li>
+        <li>Coins, streaks, and settings are saved only on your device.</li>
+        <li>Ads are shown through Google AdMob, which may use an advertising ID.</li>
+        <li>Optional Google Play Games sign-in and in-app purchases are on the way — see Sections 3 and 4.</li>
+        <li>We never sell your personal information.</li>
+      </ul>
+    </div>
+
+    <section class="doc-section" id="sec-1">
+      <div class="sec-head"><span class="wedge"><span class="hub">1</span></span><h2 class="sec-title">Developer Information</h2></div>
+      <p>Developer Name: Agalecha<br>Contact: <a href="mailto:agalecha.dev@gmail.com">agalecha.dev@gmail.com</a></p>
+    </section>
+
+    <section class="doc-section" id="sec-2">
+      <div class="sec-head"><span class="wedge"><span class="hub">2</span></span><h2 class="sec-title">Information We Collect</h2></div>
+      <h3>2.1 Local Data (Stored on Device Only)</h3>
+      <ul>
+        <li>Coins, scores, streaks</li>
+        <li>Game progress</li>
+        <li>Settings (sound, theme)</li>
+      </ul>
+      <p>This data never leaves your device.</p>
+      <h3>2.2 Advertising (Google AdMob)</h3>
+      <p>The app uses Google AdMob to display ads. Google may collect:</p>
+      <ul>
+        <li>Advertising ID</li>
+        <li>Device info</li>
+        <li>IP address</li>
+        <li>Ad interaction data</li>
+      </ul>
+      <p>Ads may be personalized. Where required (EEA/UK), we request user consent before showing personalized ads.</p>
+      <p>Learn more: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a> · <a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a></p>
+    </section>
+
+    <section class="doc-section" id="sec-3">
+      <div class="sec-head"><span class="wedge"><span class="hub">3</span></span><h2 class="sec-title">Google Play Games (Optional)</h2></div>
+      <p>The app supports Google Play Games Services for leaderboards and achievements. This feature is optional but requires signing in with your Google account. We do not access or store your Google account data.</p>
+    </section>
+
+    <section class="doc-section" id="sec-4">
+      <div class="sec-head"><span class="wedge"><span class="hub">4</span></span><h2 class="sec-title">In-App Purchases</h2></div>
+      <p>Dhamaka Wheel offers optional in-app purchases. All payments are securely processed by Google Play Billing. We do not collect or store any payment information.</p>
+    </section>
+
+    <section class="doc-section" id="sec-5">
+      <div class="sec-head"><span class="wedge"><span class="hub">5</span></span><h2 class="sec-title">What We Do NOT Collect</h2></div>
+      <ul>
+        <li>No name, email, or phone number</li>
+        <li>No precise location</li>
+        <li>No contacts, camera, or microphone data</li>
+        <li>No payment details</li>
+      </ul>
+    </section>
+
+    <section class="doc-section" id="sec-6">
+      <div class="sec-head"><span class="wedge"><span class="hub">6</span></span><h2 class="sec-title">Third-Party Services</h2></div>
+      <ul>
+        <li>Google AdMob (ads)</li>
+        <li>Google Play Billing (payments)</li>
+        <li>Google Play Games Services (leaderboards &amp; achievements)</li>
+      </ul>
+    </section>
+
+    <section class="doc-section" id="sec-7">
+      <div class="sec-head"><span class="wedge"><span class="hub">7</span></span><h2 class="sec-title">Data Retention</h2></div>
+      <p>All game data is stored locally. You can delete it anytime by clearing app storage or uninstalling the app.</p>
+    </section>
+
+    <section class="doc-section" id="sec-8">
+      <div class="sec-head"><span class="wedge"><span class="hub">8</span></span><h2 class="sec-title">Children's Privacy</h2></div>
+      <p>The app is not specifically directed to children under 13, and we do not knowingly collect personal data from children.</p>
+    </section>
+
+    <section class="doc-section" id="sec-9">
+      <div class="sec-head"><span class="wedge"><span class="hub">9</span></span><h2 class="sec-title">Security</h2></div>
+      <p>Your data is stored securely on your device. We do not store any data on external servers.</p>
+    </section>
+
+    <section class="doc-section" id="sec-10">
+      <div class="sec-head"><span class="wedge"><span class="hub">10</span></span><h2 class="sec-title">Changes to Policy</h2></div>
+      <p>We may update this policy. Continued use of the app means you accept updates.</p>
+    </section>
+
+    <hr class="rule">
+
+    <section class="doc-section" id="sec-11">
+      <div class="sec-head"><span class="wedge"><span class="hub">11</span></span><h2 class="sec-title">Contact</h2></div>
+      <p>Email: <a href="mailto:agalecha.dev@gmail.com">agalecha.dev@gmail.com</a></p>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="foot-emblem">
+    <span class="mini-ring" aria-hidden="true"></span>
+    <span>Dhamaka Wheel</span>
+  </div>
+  <div class="meta">Effective July 7, 2026 · Privacy Policy</div>
+  <a class="cross-link" href="terms-of-service.html">View Terms of Service →</a>
+</footer>
+
 </body>
 </html>
