@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Brain Flip</title>
+    <link rel="icon" type="image/png" href="app_icon.png">
+    <link rel="apple-touch-icon" href="app_icon.png">
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -14,145 +17,213 @@
             padding: 20px;
             background: #f5f5f5;
         }
+
         .container {
             background: white;
             padding: 40px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        h1 {
-            color: #1A56DB;
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
             border-bottom: 3px solid #1A56DB;
-            padding-bottom: 10px;
+            padding-bottom: 12px;
+            margin-bottom: 16px;
         }
+
+        .header-brand img {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            box-shadow: 0 4px 10px rgba(26, 86, 219, 0.2);
+            object-fit: cover;
+        }
+
+        .header-brand h1 {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin: 0;
+            font-size: 1.8em;
+            color: #1A56DB;
+        }
+
         h2 {
             color: #1A56DB;
             margin-top: 30px;
         }
+
         h3 {
             color: #555;
         }
+
         a {
             color: #1A56DB;
         }
+
         .last-updated {
             color: #666;
             font-style: italic;
         }
+
         ul {
             padding-left: 20px;
         }
+
         li {
             margin: 10px 0;
         }
+
+        .notice-box {
+            background: #eef2ff;
+            border-left: 4px solid #1A56DB;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <h1>🧠 Privacy Policy for Brain Flip</h1>
-        <p class="last-updated"><strong>Last updated:</strong> Jun 9, 2026</p>
+        <div class="header-brand">
+            <img src="app_icon.png" alt="Brain Flip Logo">
+            <h1>Privacy Policy for Brain Flip</h1>
+        </div>
+        <p class="last-updated"><strong>Last updated:</strong> September 27, 2026</p>
 
         <h2>Introduction</h2>
-        <p>This Privacy Policy describes how Brain Flip ("we", "our", or "us") collects, uses, and shares information when you use our mobile application.</p>
+        <p>This Privacy Policy describes how Brain Flip ("we", "our", or "us") collects, uses, and shares information
+            when you use our mobile application <strong>Brain Flip</strong>.</p>
+
+        <div class="notice-box">
+            <strong>Family Friendly & Privacy First:</strong> Brain Flip is designed for mixed audiences (children,
+            teens, and adults). We use a <strong>neutral age selection screen</strong> on first launch to determine
+            appropriate ad treatment. For child users and unknown-age users, all ad requests serve
+            <strong>non-personalized advertisements</strong> with child-directed treatment flags enabled
+            (`tagForChildDirectedTreatment = true`) and maximum ad content rating restricted to <strong>G</strong>.
+        </div>
 
         <h2>Information We Collect</h2>
-        
+
         <h3>Information You Provide</h3>
         <ul>
-            <li><strong>Game Progress:</strong> We store your game progress, including completed levels, earned stars, brain points, and bulb counts locally on your device using SharedPreferences.</li>
-            <li><strong>In-App Purchases:</strong> When you make purchases, payment information is processed by Google Play Store. We do not have access to your payment details.</li>
+            <li><strong>Age Group Selection:</strong> We collect your age category (e.g., 9-12, 13-17, 18+) via a
+                neutral age gate to configure appropriate ad targeting and privacy settings. We do not store exact dates
+                of birth or personal identity details.</li>
+            <li><strong>Game Progress:</strong> We store your game progress (completed levels, earned stars, brain
+                points, and bulb hint counts) locally on your device using SharedPreferences.</li>
+            <li><strong>In-App Purchases:</strong> When you purchase items (such as hints or ad removal), payment
+                processing is handled securely by Google Play Store. We do not receive or store your credit card or
+                financial details.</li>
         </ul>
 
-        <h3>Automatically Collected Information</h3>
+        <h3>Automatically Processed Data</h3>
         <ul>
-            <li><strong>Device Information:</strong> Device type, operating system version, and unique device identifiers.</li>
-            <li><strong>Usage Data:</strong> Game statistics, session duration, and feature usage.</li>
-            <li><strong>Advertising Data:</strong> Our advertising partners may collect data for personalized ads (see Advertising section).</li>
+            <li><strong>Technical & Diagnostic Data:</strong> Third-party SDKs (such as Google Mobile Ads) may process
+                technical info (device model, operating system version, coarse IP address for general region-level ad
+                delivery, and diagnostic/crash logs) strictly for ad delivery, frequency capping, and preventing fraud.
+            </li>
+            <li><strong>Non-Personalized Advertising Data:</strong> Ad requests sent by Brain Flip specify
+                non-personalized ad delivery and child-directed treatment for child users. Google AdMob processes
+                contextual info (such as general app category and coarse location) rather than personal profiling or
+                cross-app behavioral tracking.</li>
         </ul>
 
         <h2>How We Use Your Information</h2>
         <p>We use the collected information to:</p>
         <ul>
-            <li>Provide and maintain the game functionality</li>
-            <li>Save your game progress</li>
-            <li>Process in-app purchases</li>
-            <li>Display relevant advertisements</li>
-            <li>Improve user experience and game features</li>
-            <li>Analyze app performance and fix bugs</li>
+            <li>Provide and maintain core game features and save progress</li>
+            <li>Configure privacy and ad treatment based on user age group</li>
+            <li>Process in-app purchases via Google Play Billing</li>
+            <li>Display non-personalized advertisements (rated G)</li>
+            <li>Sync leaderboard scores & achievements via Google Play Games Services when voluntarily initiated by the
+                user</li>
+            <li>Improve app performance, stability, and fix bugs</li>
         </ul>
 
-        <h2>Data Storage</h2>
+        <h2>Data Storage & Accounts</h2>
         <ul>
-            <li><strong>Local Storage:</strong> Game progress is stored locally on your device and is not transmitted to our servers.</li>
-            <li><strong>No Account Required:</strong> Brain Flip does not require account creation or login.</li>
+            <li><strong>Local Progress:</strong> Game level progress is stored directly on your device.</li>
+            <li><strong>No Account Required:</strong> You do not need to create an account or provide personal
+                information to play Brain Flip.</li>
         </ul>
 
         <h2>Third-Party Services</h2>
-        <p>We use the following third-party services:</p>
-        
-        <h3>Google AdMob</h3>
+        <p>We use the following privacy-compliant third-party SDKs:</p>
+
+        <h3>1. Google AdMob (Advertising)</h3>
         <ul>
-            <li><strong>Purpose:</strong> Display advertisements</li>
-            <li><strong>Data Collected:</strong> Advertising ID, device information, IP address, app usage data</li>
-            <li><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+            <li><strong>Purpose:</strong> Display non-personalized advertisements (Banner, Interstitial, and Rewarded
+                ads).</li>
+            <li><strong>Data Handling:</strong> Ad requests for children and under-age users are marked for
+                child-directed treatment
+                (`tagForChildDirectedTreatment = true`) and restricted to content rating G. Personalized ads and
+                interest-based user profiling are disabled.</li>
+            <li><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank">Google
+                    Privacy Policy</a></li>
         </ul>
 
-        <h3>Google Play In-App Billing</h3>
+        <h3>2. Google Play Games Services (Leaderboards & Achievements)</h3>
         <ul>
-            <li><strong>Purpose:</strong> Process in-app purchases</li>
-            <li><strong>Data Collected:</strong> Purchase history, payment information (processed by Google)</li>
-            <li><strong>Privacy Policy:</strong> <a href="https://play.google.com/intl/en_us/about/play-terms/" target="_blank">Google Play Terms</a></li>
+            <li><strong>Purpose:</strong> Sync leaderboard scores and display game achievements.</li>
+            <li><strong>Data Handled:</strong> Pseudonymized Player ID and game score submissions managed via Google
+                Play, active only when user explicitly connects their Play Games account.</li>
+            <li><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank">Google
+                    Play Services Policy</a></li>
         </ul>
 
-        <h2>Advertising</h2>
-        <p>We display ads through Google AdMob. These ads may be personalized based on your interests. You can opt out of personalized advertising by:</p>
+        <h3>3. Google Play In-App Billing</h3>
         <ul>
-            <li>Visiting <a href="https://adssettings.google.com/" target="_blank">Google Ad Settings</a></li>
-            <li>Adjusting your device settings (Settings > Google > Ads > Opt out of Ads Personalization)</li>
+            <li><strong>Purpose:</strong> Secure processing of digital purchases.</li>
+            <li><strong>Privacy Policy:</strong> <a href="https://play.google.com/intl/en_us/about/play-terms/"
+                    target="_blank">Google Play Terms</a></li>
         </ul>
 
-        <h2>Children's Privacy</h2>
-        <p>Brain Flip is a general audience game. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.</p>
+        <h2>Advertising & Privacy Controls</h2>
+        <p>Brain Flip serves <strong>non-personalized ads only</strong>. Advertisements are selected based on contextual
+            information (such as the app topic or approximate general location) rather than individual user interest
+            profiling or cross-app tracking.</p>
+
+        <h2>Children's Privacy (COPPA, GDPR-K & Play Families Policy)</h2>
+        <p>Brain Flip is a family-friendly game suitable for all ages. We strictly comply with Google Play's Families
+            Policy, COPPA (Children's Online Privacy Protection Act), and GDPR-K:</p>
+        <ul>
+            <li>We do <strong>not</strong> collect personal information from children under 13.</li>
+            <li>We do <strong>not</strong> use behavioral remarketing or targeted advertising.</li>
+            <li>AdMob requests are restricted to maximum content rating <strong>G</strong>.</li>
+        </ul>
 
         <h2>Data Security</h2>
-        <p>We implement reasonable security measures to protect your information. However, no method of electronic storage is 100% secure.</p>
+        <p>All data transmitted between Brain Flip and third-party services (AdMob and Play Services) is encrypted in
+            transit using industry-standard TLS/HTTPS protocols.</p>
 
-        <h2>Your Rights</h2>
-        <p>You have the right to:</p>
+        <h2>Your Rights & Data Management</h2>
+        <p>You have full control over your data:</p>
         <ul>
-            <li>Access your data (stored locally on your device)</li>
-            <li>Delete your data (uninstall the app or clear app data)</li>
-            <li>Opt out of personalized advertising</li>
-            <li>Request information about data collection practices</li>
+            <li><strong>Clear Data / Delete Progress:</strong> Clear app storage via Android Settings > Apps > Brain
+                Flip > Clear Data, or simply uninstall the application.</li>
+            <li><strong>In-App Purchases:</strong> Manage your purchases anytime directly through your Google Account in
+                the Play Store.</li>
         </ul>
-
-        <h2>Data Retention</h2>
-        <ul>
-            <li><strong>Game Progress:</strong> Stored locally until you uninstall the app or clear data</li>
-            <li><strong>Purchase History:</strong> Maintained by Google Play Store according to their policies</li>
-        </ul>
-
-        <h2>International Data Transfers</h2>
-        <p>Information collected by third-party services may be transferred to and processed in countries other than your own.</p>
 
         <h2>Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Changes will be posted within the app and on this page. Continued use of the app after changes constitutes acceptance.</p>
+        <p>We may update this Privacy Policy periodically. Any changes will be updated on this page with a revised "Last
+            updated" date.</p>
 
         <h2>Contact Us</h2>
-        <p>If you have questions about this Privacy Policy, please contact us:</p>
+        <p>If you have questions about this Privacy Policy or data privacy in Brain Flip, contact us at:</p>
         <ul>
             <li><strong>Email:</strong> agalecha.dev@gmail.com</li>
-            <li><strong>Developer:</strong> Brain Flip Games</li>
+            <li><strong>Developer:</strong> Agalecha</li>
         </ul>
 
-        <h2>Compliance</h2>
-        <p>This Privacy Policy complies with:</p>
-        <ul>
-            <li>Google Play Developer Program Policies</li>
-            <li>General Data Protection Regulation (GDPR)</li>
-            <li>California Consumer Privacy Act (CCPA)</li>
-            <li>Children's Online Privacy Protection Act (COPPA)</li>
-        </ul>
+        <h2>Policy Compliance</h2>
+        <p>We design our data practices to comply with applicable privacy laws and Google Play policies. The specific
+            rights and requirements that apply may vary depending on the user's location and circumstances.</p>
     </div>
 </body>
+
 </html>
